@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bayt.css">
+    <title></title>
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #000;
+ }
+ .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+
+ }
+ .fon {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    background: lavender;
+    overflow: hidden;
+ }
+ .fon .back-memorize-block {
+    width: 100%;
+    height: 200px;
+    position: absolute;
+    top: 280px;
+    background: azure;
+ }
+ .fon .back-memorize-block .floor-one .arch1 {
+   position: absolute;
+   top: -5px;
+   width: 100%;
+   height: 10px;
+   background: rgb(255, 238, 238);
+   box-shadow: 0 0 35px 5px gold,
+         inset 0 0 25px 5px gold;
+ } 
+ .fon .back-memorize-block .floor-one .arch2 {
+   position: absolute;
+   top: 5px;
+   width: 100%;
+   height: 5px;
+   background: rgb(252, 224, 224);
+   box-shadow: 0 0 25px 5px gold,
+         inset 0 0 25px 5px gold;
+ }
+
+ .fon .back-memorize-block .floor-one {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+    background-color: rgb(236, 249, 245);
+ }
+ .fon .back-memorize-block .floor-one span {
+   box-shadow: 0 0 5px 2px gold,
+         inset 0 0 5px 2px gold;
+   position: relative;
+   margin: 5px;
+   gap: 10px;
+   height: 80%;
+   width: 60px;
+   border-top-left-radius: 20px;
+   border-top-right-radius: 20px;
+   background-color: rgb(244, 228, 228);
+ }
+ .fon .back-memorize-block .floor-two {
+   position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+    background-color: rgb(244, 255, 251);
+}
+.fon .back-memorize-block .floor-two span {
+   position: relative;
+   margin: 5px;
+   gap: 10px;
+   height: 80%;
+   width: 60px;
+   box-shadow: 0 0 10px 2px gold,
+         inset 0 0 5px 2px gold;
+   border-top-left-radius: 20px;
+   border-top-right-radius: 20px;
+   background-color: rgb(241, 248, 253);
+ }
+ .fon .back-memorize-block .floor-two .arch1 {
+   position: absolute;
+   top: 5px;
+   width: 100%;
+   height: 5px;
+   background: rgb(234, 255, 242);
+   box-shadow: 0 0 25px 5px gold,
+         inset 0 0 25px 5px gold;
+ } 
+ .fon .back-memorize-block .floor-two .arch2 {
+   position: absolute;
+   top: -5px;
+   width: 100%;
+   height: 10px;
+   background: rgb(255, 223, 223);
+   box-shadow: 0 0 25px 5px gold,
+         inset 0 0 25px 5px gold;
+ } 
+ /* Polygon */
+ .fon .polygon-block {
+   width: 100%;
+   height: 115px;
+   position: absolute;
+   bottom: 0;
+   background-color: rgb(243, 243, 130);
+ }
+ /* Ka'ba */ 
+.fon .kaba-block{
+   position: absolute;
+   left: 50%;
+   top: 90%;
+   transform: translate(-50%, -90%);
+   width: 250px;
+   height: 200px;
+   background: black;
+   /* border: 1px solid red; */
+}
+.fon .kaba-block .fundament {
+   width: 100%;
+   height: 30px;
+   position: absolute;
+   bottom: 0;
+}
+.fon .kaba-block .fundament .first-line {
+   width: 100%;
+   position: relative;
+   display: flex;
+   align-items: center;
+   height: 33%;
+   /* background: green; */
+}
+.kaba-block .fundament .first-line span {
+   gap: 1px;
+   margin: 1px;
+   width: calc(240px / var(--s));
+   height: 100%;
+   background:rgb(137, 136, 136);
+   box-shadow: 0 0 1px 1px gold;
+}
+.fon .kaba-block .fundament .second-line {
+   position: relative;
+   display: flex;
+   align-items: center;
+   width: 100%;
+   height: 32%;
+   margin-top: 1px;
+   /* background: red; */
+}
+.kaba-block .fundament .second-line span {
+   gap: 1px;
+   margin: 1px;
+   width: calc(240px / var(--s));
+   height: 100%;
+   background:rgb(137, 136, 136);
+   box-shadow: 0 0 1px 1px gold;
+}
+.fon .kaba-block .fundament .third-line {
+   position: relative;
+   display: flex;
+   align-items: center;
+   width: 100%;
+   height: 32%;
+   margin-top: 1px;
+   /* background: yellow; */
+}
+.kaba-block .fundament .third-line span {
+   gap: 1px;
+   margin: 1px;
+   width: calc(240px / var(--s));
+   height: 100%;
+   background:rgb(137, 136, 136);
+   box-shadow: 0 0 1px 1px gold;
+}
+.fon .kaba-block .fundament .black-stone {
+   width: 15px;
+   height: 20px;
+   position: absolute;
+   border-radius: 50%;
+   top: 5px;
+   left: -5px;
+   background: rgb(12, 19, 92);
+}
+.fon .kaba-block .top-style-block .first-ribbon {
+   width: 100%;
+   height: 20px;
+   position: absolute;
+   top: 30px;
+   background-color: gold;
+   border: 2px solid goldenrod;
+   filter: blur(2px);
+}
+.fon .kaba-block .top-style-block .second-ribbon {
+   width: 100%;
+   height: 20px;
+   position: absolute;
+   top: 55px;
+   /* border: 2px solid goldenrod; */
+}
+.kaba-block .top-style-block .second-ribbon span:nth-child(1) {
+   position: absolute;
+   height: 100%;
+   left: -1px;
+   width: 5px;
+   background: gold;
+   filter: blur(2px);
+}
+.kaba-block .top-style-block .second-ribbon span:nth-child(2) {
+   position: absolute;
+   height: 100%;
+   width: 15px;
+   background: gold;
+   border-radius: 50%;
+   left: 10px;
+   filter: blur(2px);
+}
+.kaba-block .top-style-block .second-ribbon span:nth-child(3) {
+   position: absolute;
+   height: 100%;
+   width: 15px;
+   background: gold;
+   border-radius: 50%;
+   left: 90px;
+   filter: blur(2px);
+}
+.kaba-block .top-style-block .second-ribbon span:nth-child(4) {
+   position: absolute;
+   height: 100%;
+   width: 110px;
+   background: gold;
+   left: 110px;
+   filter: blur(2px);
+}
+.kaba-block .top-style-block .second-ribbon span:nth-child(5) {
+   position: absolute;
+   height: 100%;
+   width: 15px;
+   background: gold;
+   left: 225px;
+   border-radius: 50%;
+   filter: blur(2px);
+}
+.kaba-block .top-style-block .second-ribbon span:nth-child(6) {
+   position: absolute;
+   height: 100%;
+   width: 5px;
+   background: gold;
+   left: 245px;
+   filter: blur(2px);
+}
+.fon .kaba-block .top-style-block .door-block{
+   width: 58px;
+   height:105px;
+   position: absolute;
+   left: 27.5px;
+   top: 55px;
+   background-color: gold;
+   filter: blur(2px);
+}
+/* Sky */
+.fon .sky-block {
+   width: 100%;
+   height: 275px;
+   position: absolute;
+   top: 0;
+   background: midnightblue;
+}
+.fon .sky-block .moon {
+   width: 100px;
+   height: 100px;
+   border-radius: 50%;
+   background: white;
+   position: absolute;
+   top: 10px;
+   left: 40px;
+   box-shadow: 0 0 50px 10px white;
+   filter: drop-shadow(0 0 30px white);
+}
+.fon .towers-block {
+   width: 300px;
+   height: 275px;
+   position: absolute;
+   left: 50%;
+   top: 0;
+   transform: translate(-50%, 0%);
+}
+.fon .towers-block .first-tower-block {
+   display: flex;
+   justify-content: center;
+   position: absolute;
+   bottom: 0;
+   left: 20px;
+   width: 50px;
+   height: 55%;
+   background-color: antiquewhite;
+   box-shadow: 0 0 25px 5px gold,
+         inset 0 0 25px 5px gold;
+}
+.fon .towers-block .first-tower-block .floor1 {
+   width: 100px;
+   height: 30px;
+   background: antiquewhite;
+   position: absolute;
+   border-bottom-left-radius: 50%;
+   border-bottom-right-radius: 50%;
+   bottom: 0;
+   box-shadow: 0 0 25px 5px gold,
+         inset 0 0 25px 5px gold;
+}
+.fon .towers-block .first-tower-block .floor2 {
+   width: 90px;
+   height: 30px;
+   background: antiquewhite;
+   position: absolute;
+   border-bottom-left-radius: 50%;
+   border-bottom-right-radius: 50%;
+   top: 20px;
+   box-shadow: 0 0 25px 5px gold,
+         inset 0 0 25px 5px gold;
+}
+.fon .towers-block .first-tower-block .floor3 {
+   width: 70px;
+   height: 4px;
+   background: antiquewhite;
+   position: absolute;
+   top: 15px;
+   box-shadow: 0 0 25px 5px gold,
+         inset 0 0 25px 5px gold;
+}
+.fon .towers-block .first-tower-block .floor4 {
+   width: 86px;
+   height: 2px;
+   background: antiquewhite;
+   position: absolute;
+   top: 12px;
+   box-shadow: 0 0 25px 5px gold,
+         inset 0 0 25px 5px gold;
+}
+.fon .towers-block .first-tower-block .floor5 {
+   width: 50px;
+   height: 30px;
+   background: antiquewhite;
+   position: absolute;
+   top: -10px;
+   border-radius: 30%;
+   box-shadow: 0 0 25px 5px gold,
+         inset 0 0 25px 5px gold;
+}
+.fon .towers-block .first-tower-block .floor6 {
+   width: 40px;
+   height: 40px;
+   background: antiquewhite;
+   position: absolute;
+   top: -40px;
+   border-radius: 50%;
+   box-shadow: 0 0 25px 5px gold,
+         inset 0 0 25px 5px gold;
+}
+.fon .towers-block .first-tower-block .floor7 {
+   width: 10px;
+   height: 10px;
+   background: antiquewhite;
+   position: absolute;
+   top: -49px;
+   border-radius: 50%;
+   box-shadow: 0 0 25px 5px gold,
+         inset 0 0 25px 5px gold;
+}
+.fon .towers-block .first-tower-block .floor8 {
+   width: 4px;
+   height: 40px;
+   background: antiquewhite;
+   position: absolute;
+   top: -80px;
+   border-radius: 50%;
+   box-shadow: 0 0 25px 5px gold,
+         inset 0 0 25px 5px gold;
+}
+.fon .towers-block .first-tower-block .moon {
+   width: 20px;
+   height: 20px;
+   border: 2px solid antiquewhite;
+   border-top: none;
+   position: absolute;
+   top: -97px;
+   border-radius: 50%;
+}
+.fon .towers-block .second-tower-block .floor1 {
+   width: 100px;
+   height: 30px;
+   background: antiquewhite;
+   position: absolute;
+   border-bottom-left-radius: 50%;
+   border-bottom-right-radius: 50%;
+   bottom: 0;
+   box-shadow: 0 0 25px 5px gold,
+         inset 0 0 25px 5px gold;
+}
+.fon .towers-block .second-tower-block .floor2 {
+   width: 90px;
+   height: 30px;
+   background: antiquewhite;
+   position: absolute;
+   border-bottom-left-radius: 50%;
+   border-bottom-right-radius: 50%;
+   top: 20px;
+   box-shadow: 0 0 25px 5px gold,
+         inset 0 0 25px 5px gold;
+}
+.fon .towers-block .second-tower-block .floor3 {
+   width: 70px;
+   height: 4px;
+   background: antiquewhite;
+   position: absolute;
+   top: 15px;
+   box-shadow: 0 0 25px 5px gold,
+         inset 0 0 25px 5px gold;
+}
+.fon .towers-block .second-tower-block .floor4 {
+   width: 86px;
+   height: 2px;
+   background: antiquewhite;
+   position: absolute;
+   top: 12px;
+   box-shadow: 0 0 25px 1px gold,
+         inset 0 0 25px 0.5px gold;
+}
+.fon .towers-block .second-tower-block .floor5 {
+   width: 50px;
+   height: 30px;
+   background: antiquewhite;
+   position: absolute;
+   top: -10px;
+   border-radius: 30%;
+   box-shadow: 0 0 25px 5px gold,
+         inset 0 0 25px 5px gold;
+}
+.fon .towers-block .second-tower-block .floor6 {
+   width: 40px;
+   height: 40px;
+   background: antiquewhite;
+   position: absolute;
+   top: -40px;
+   border-radius: 50%;
+   box-shadow: 0 0 25px 5px gold,
+         inset 0 0 25px 5px gold;
+}
+.fon .towers-block .second-tower-block .floor7 {
+   width: 10px;
+   height: 10px;
+   background: antiquewhite;
+   position: absolute;
+   top: -49px;
+   border-radius: 50%;
+   box-shadow: 0 0 25px 5px gold,
+         inset 0 0 25px 5px gold;
+}
+.fon .towers-block .second-tower-block .floor8 {
+   width: 4px;
+   height: 40px;
+   background: antiquewhite;
+   position: absolute;
+   top: -80px;
+   border-radius: 50%;
+   box-shadow: 0 0 25px 5px gold,
+         inset 0 0 25px 5px gold;
+}
+.fon .towers-block .second-tower-block .moon {
+   width: 20px;
+   height: 20px;
+   border: 2px solid antiquewhite;
+   border-top: none;
+   position: absolute;
+   top: -97px;
+   border-radius: 50%;
+}
+.fon .towers-block .second-tower-block {
+   display: flex;
+   justify-content: center;
+   position: absolute;
+   bottom: 0;
+   right: 20px;
+   width: 50px;
+   height: 55%;
+   background-color: antiquewhite;
+   box-shadow: 0 0 25px 5px gold,
+         inset 0 0 25px 5px gold;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.sky-block span {
+            
+   position: absolute;
+   /* clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%,39% 35%); */
+   background: snow;
+  border-radius: 50%;
+  transform-origin: 200px;
+   animation: bluring 3s linear infinite;
+}
+@keyframes bluring {
+   0%,100%{
+       box-shadow: none;
+       
+   }
+   50%{
+       box-shadow:  0 0 60px 8px snow;
+      /* filter: drop-shadow(0 0 20px white); */
+   }
+}
+
+
+
+        .cong {
+            position: absolute;
+            z-index: 8;
+            text-align: center;
+            width: 550px;
+            height: 300px;
+        }
+        .cong span {
+            font-size: 36px;
+            font-weight: 800;
+            color: transparent;
+            text-transform: uppercase;
+            animation: animatetext 1.5s linear forwards,
+                       animatecolor 1s linear infinite;
+            animation-delay: calc(0.1s * var(--i));
+        }
+        @keyframes animatetext {
+            0% {
+                filter: blur(30px);
+            }
+            100% {
+                filter: blur(0);
+                color: red;
+                -webkit-text-stroke: 0.6px white;
+            }
+        }
+        @keyframes animatecolor {
+            0% {
+                filter: hue-rotate(0deg);
+            }
+            100% {
+                filter: hue-rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="cong">
+            <span style="--i:1">T</span>
+            <span style="--i:2">u</span>
+            <span style="--i:3">g'</span>
+            <span style="--i:4">i</span>
+            <span style="--i:5">l</span>
+            <span style="--i:6">g</span>
+            <span style="--i:7">a</span>
+            <span style="--i:8">n</span>
+            <span style="--i:9">&nbsp;</span>
+            <span style="--i:10">k</span>
+            <span style="--i:11">u</span>
+            <span style="--i:12">n</span>
+            <span style="--i:13">i</span>
+            <span style="--i:14">n</span>
+            <span style="--i:15">g</span>
+            <span style="--i:16">i</span>
+            <span style="--i:17">z</span> <br>
+            <span style="--i:18">&nbsp;</span>
+            <span style="--i:19">m</span>
+            <span style="--i:20">u</span>
+            <span style="--i:21">b</span>
+            <span style="--i:22">o</span>
+            <span style="--i:23">r</span>
+            <span style="--i:24">a</span>
+            <span style="--i:25">k</span>
+            <span style="--i:26">&nbsp;</span>
+            <span style="--i:27">b</span>
+            <span style="--i:28">o'</span>
+            <span style="--i:29">l</span>
+            <span style="--i:30">s</span>
+            <span style="--i:31">i</span>
+            <span style="--i:32">n</span> <br>
+            <span style="--i:33">&nbsp;</span>
+            <span style="--i:34">o</span>
+            <span style="--i:35">n</span>
+            <span style="--i:36">a</span>
+            <span style="--i:37">j</span>
+            <span style="--i:38">o</span>
+            <span style="--i:39">n</span>
+            <span style="--i:40">!</span>
+            <br>
+            
+            <span style="--i:41">k</span>
+            <span style="--i:42">a</span>
+            <span style="--i:43">'</span>
+            <span style="--i:44">b</span>
+            <span style="--i:45">a</span>
+            <span style="--i:46">&nbsp;</span>
+            <span style="--i:47">s</span>
+            <span style="--i:48">i</span>
+            <span style="--i:49">z</span>
+            <span style="--i:50">n</span>
+            <span style="--i:51">i</span>
+            <span style="--i:52">&nbsp;</span>
+            <span style="--i:53">k</span>
+            <span style="--i:54">u</span>
+            <span style="--i:55">t</span>
+            <span style="--i:56">m</span>
+            <span style="--i:57">o</span>
+            <span style="--i:58">q</span>
+            <span style="--i:59">d</span>
+            <span style="--i:60">a</span>
+            <span style="--i:61">!</span>
+        </div>
+        <div class="fon">
+            <div class="back-memorize-block">
+                <div class="floor-one">
+                    <div class="arch1"></div>
+                    <div class="arch2"></div>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="floor-two">
+                    <div class="arch1"></div>
+                    <div class="arch2"></div>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <div class="polygon-block"></div>
+            <div class="kaba-block">
+                <div class="fundament">
+                    <div class="first-line">
+                        <span style="--s:12"></span>
+                        <span style="--s:5"></span>
+                        <span style="--s:7"></span>
+                        <span style="--s:11"></span>
+                        <span style="--s:9"></span>
+                        <span style="--s:13"></span>
+                        <span style="--s:8"></span>
+                        <span style="--s:10"></span>
+                        <span style="--s:4"></span>
+                        <span style="--s:6"></span>
+                    </div>
+                    <div class="second-line">
+                        <span style="--s:10"></span>
+                        <span style="--s:9"></span>
+                        <span style="--s:5"></span>
+                        <span style="--s:12"></span>
+                        <span style="--s:7"></span>
+                        <span style="--s:4"></span>
+                        <span style="--s:6"></span>
+                        <span style="--s:13"></span>
+                        <span style="--s:11"></span>
+                        <span style="--s:8"></span>
+                    </div>
+                    <div class="third-line">
+                        <span style="--s:7"></span>
+                        <span style="--s:10"></span>
+                        <span style="--s:12"></span>
+                        <span style="--s:11"></span>
+                        <span style="--s:6"></span>
+                        <span style="--s:8"></span>
+                        <span style="--s:9"></span>
+                        <span style="--s:5"></span>
+                        <span style="--s:13"></span>
+                        <span style="--s:4"></span>
+                    </div>
+                    <div class="black-stone"></div>
+                </div>
+                <div class="top-style-block">
+                    <div class="first-ribbon"></div>
+                    <div class="second-ribbon">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <div class="door-block"></div>
+                </div>
+            </div>
+            <div class="sky-block">
+                <div class="moon"></div>
+            </div>
+            <div class="towers-block">
+                <div class="first-tower-block">
+                    <div class="floor1"></div>
+                    <div class="floor2"></div>
+                    <div class="floor3"></div>
+                    <div class="floor4"></div>
+                    <div class="floor5"></div>
+                    <div class="floor6"></div>
+                    <div class="floor7"></div>
+                    <div class="floor8"></div>
+                    <div class="moon"></div>
+                </div>
+                <div class="second-tower-block">
+                    <div class="floor1"></div>
+                    <div class="floor2"></div>
+                    <div class="floor3"></div>
+                    <div class="floor4"></div>
+                    <div class="floor5"></div>
+                    <div class="floor6"></div>
+                    <div class="floor7"></div>
+                    <div class="floor8"></div>
+                    <div class="moon"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        function stars(){
+            star = 500;
+            let sky = document.querySelector('.sky-block');
+            let a = 0;
+           while(a<star){
+            let starmore = document.createElement('span');
+            
+            let size = Math.random() * 5;
+            let posX = Math.floor(Math.random() * 600);
+            let posY = Math.floor(Math.random() * 275);
+            let delay = Math.random() * -20;
+             
+            starmore.style.left = posX + 'px';
+            starmore.style.top = posY + 'px';
+            starmore.style.animationDelay = delay + 's';
+            starmore.style.width = size * 0.4 + 'px';
+            starmore.style.height = size  * 0.4 + 'px';
+
+            sky.appendChild(starmore);
+            a++
+           }
+
+        }
+        stars()
+    </script>
+</body>
+</html>
